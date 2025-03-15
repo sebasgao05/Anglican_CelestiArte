@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #ffffff;
+    border-bottom: 2px solid #eee;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li {
+    display: inline;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.navbar .account {
+    font-size: 16px;
+}
+
+/* SECCIÓN PRINCIPAL */
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero .notice {
+    font-size: 16px;
+    color: red;
+    font-style: italic;
+}
+
+/* PRODUCTOS */
+.products {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.sorting {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sorting select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.product {
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* LIMITE DE TAMAÑO PARA TODAS LAS IMÁGENES */
+img {
+    max-width: 100%;
+    max-height: 200px; /* Ajuste para limitar el tamaño */
+    object-fit: contain; /* Evita distorsión manteniendo proporciones */
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #002b46;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-info,
+.footer-social,
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer p, 
+.footer a {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #1abc9c;
+}
+
+/* Redes Sociales */
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #1abc9c;
+}
+
+/* Botón Scroll Up */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.scroll-to-top:hover {
+    background: white;
+    color: #002b46;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 10px 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Sección Acerca de Nosotros */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.about-column {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.about-column h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.about-column p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-column a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.about-column a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de la sección de Mi Cuenta */
+.account-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de la información del usuario */
+.user-info {
+    text-align: center;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.user-info h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.user-info button {
+    padding: 10px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.user-info button:hover {
+    background-color: #c82333;
+}
+
+/* Tabla de Usuarios */
+.user-list {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.user-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #002b46;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botón Editar */
+.btn-edit {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #17a2b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.btn-edit i {
+    margin-right: 5px;
+}
+
+.btn-edit:hover {
+    background-color: #138496;
+}
+
+/* Botón Eliminar */
+.btn-delete {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Botón deshabilitado para evitar que el usuario se elimine a sí mismo */
+.btn-disabled {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+/* Contenedor de la cuenta */
+.account-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Estilos de formularios */
+.form-container {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #002b46;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container button {
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Botón de cerrar sesión */
+.btn-logout {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+/* Paginación  */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination .page-link {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    background-color: #f8f9fa;
+    color: #007BFF;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.pagination .page-link:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.pagination .active {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #007BFF;
+}
+
+/* Flechas de paginación */
+.pagination .page-link:first-child,
+.pagination .page-link:last-child {
+    font-size: 18px;
+}
