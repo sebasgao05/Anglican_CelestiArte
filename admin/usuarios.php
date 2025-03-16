@@ -38,7 +38,7 @@ $result = $conexion->query($sql);
 <header class="navbar">
     <div class="logo">
         <a href="../public/index.html"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
-        <a href="../publicindex.html"><h1>Anglican CelestiArte</h1></a>
+        <a href="../public/index.html"><h1>Anglican CelestiArte</h1></a>
     </div>
     <nav>
         <ul>
