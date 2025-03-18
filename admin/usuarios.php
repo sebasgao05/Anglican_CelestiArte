@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include __DIR__ . '/../config/test_conexion.php';
 
 // Verificar si el usuario es administrador

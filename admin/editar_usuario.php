@@ -16,11 +16,12 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
-    $usuario = $result->fetch_assoc();
-    $stmt->close();
-} else {
-    header("Location: usuarios.php");
-    exit;
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+    } else {
+        die("Error: Usuario no encontrado.");
+    }
 }
 
 // Si se envió el formulario de edición
@@ -56,22 +57,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <section class="edit-user-container">
         <h2>Editar Usuario</h2>
-        <form action="usuarios.php" method="POST">
+        <form action="editar_usuario.php?id=<?= $user['id'] ?>" method="POST">
             <table class="edit-user-table">
                 <tr>
                     <td><label for="nombre">Nombre:</label></td>
-                    <td><input type="text" id="nombre" name="nombre" value="<?= htmlspecialchars($usuario['nombre']) ?>" required></td>
+                    <td><input type="text" id="nombre" name="nombre" value="<?= htmlspecialchars($user['nombre']) ?>" required></td>
                 </tr>
                 <tr>
                     <td><label for="email">Correo:</label></td>
-                    <td><input type="email" id="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>" required></td>
+                    <td><input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required></td>
                 </tr>
                 <tr>
                     <td><label for="rol">Rol:</label></td>
                     <td>
                         <select id="rol" name="rol">
-                            <option value="Usuario" <?= $usuario['rol'] === 'Usuario' ? 'selected' : '' ?>>Usuario</option>
-                            <option value="Administrador" <?= $usuario['rol'] === 'Administrador' ? 'selected' : '' ?>>Administrador</option>
+                            <option value="Usuario" <?= $user['rol'] === 'Usuario' ? 'selected' : '' ?>>Usuario</option>
+                            <option value="Administrador" <?= $user['rol'] === 'Administrador' ? 'selected' : '' ?>>Administrador</option>
                         </select>
                     </td>
                 </tr>
