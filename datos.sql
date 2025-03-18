@@ -1,5 +1,5 @@
-CREATE DATABASE deus_users;
-USE deus_users;
+CREATE DATABASE anglican_celestiarte;
+USE anglican_celestiarte;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,

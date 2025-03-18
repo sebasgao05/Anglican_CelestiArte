@@ -1,8 +1,9 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include 'test_conexion.php';
+include __DIR__ . '/../config/test_conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = trim($_POST['nombre']);
