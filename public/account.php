@@ -26,6 +26,9 @@ session_start();
             <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] === 'Administrador') { ?>
                 <li><a href="../admin/usuarios.php">Gestionar Usuarios</a></li>
             <?php } ?>
+            <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 'Administrador') : ?>
+                <li><a href="../productos/productos.php">Productos</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

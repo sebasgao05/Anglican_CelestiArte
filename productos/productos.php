@@ -1,27 +1,27 @@
 <?php
 //session_start();
-include __DIR__ . '/../config/test_conexion.php';
+include '../config/test_conexion.php';
 
 // Verificar si el usuario es administrador
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'Administrador') {
-    header("Location: ../public/account.php");
+    header("Location: ../account.php"); // Redirigir si no es administrador
     exit;
 }
 
 // Configuración de paginación
-$usuarios_por_pagina = 10; // Mostrar 10 usuarios por página
-$pagina_actual = isset($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
-$offset = ($pagina_actual - 1) * $usuarios_por_pagina;
+$productos_por_pagina = 10; // Mostrar 10 productos por página
+$pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+$offset = ($pagina_actual - 1) * $productos_por_pagina;
 
-// Obtener el total de usuarios
-$sql_total = "SELECT COUNT(*) AS total FROM usuarios";
-$result_total = $conexion->query($sql_total);
-$total_usuarios = $result_total->fetch_assoc()['total'];
-$total_paginas = ceil($total_usuarios / $usuarios_por_pagina);
-
-// Obtener la lista de usuarios con paginación
-$sql = "SELECT id, nombre, email, rol FROM usuarios LIMIT $usuarios_por_pagina OFFSET $offset";
+// Obtener los productos de la base de datos
+$sql = "SELECT * FROM productos LIMIT $productos_por_pagina OFFSET $offset";
 $result = $conexion->query($sql);
+
+// Obtener el número total de productos
+$sql_total = "SELECT COUNT(*) FROM productos";
+$result_total = $conexion->query($sql_total);
+$total_productos = $result_total->fetch_row()[0];
+$total_paginas = ceil($total_productos / $productos_por_pagina);
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +29,9 @@ $result = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios - Anglican CelestiArte</title>
+    <title>Gestión de Productos</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="style_producto.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -54,39 +55,40 @@ $result = $conexion->query($sql);
         </nav>
     </header>
 
-    <section class="user-list">
-        <h2>Lista de Usuarios Registrados</h2>
-        <table>
+    <section class="products-container">
+        <h2>Gestión de Productos</h2>
+        
+        <!-- Botón para agregar un nuevo producto -->
+        <a href="agregar_producto.php" class="btn-save">Agregar Nuevo Producto</a>
+
+        <!-- Tabla de productos -->
+        <table class="products-table" >
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Imagen</th>
                     <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Rol</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $result->fetch_assoc()) { ?>
+                <?php while ($product = $result->fetch_assoc()): ?>
                     <tr>
-                        <td><?= htmlspecialchars($row['id']) ?></td>
-                        <td><?= htmlspecialchars($row['nombre']) ?></td>
-                        <td><?= htmlspecialchars($row['email']) ?></td>
-                        <td><?= htmlspecialchars($row['rol']) ?></td>
+                        <td><img src="<?= htmlspecialchars($product['imagen']) ?>" alt="Imagen del producto" width="100" height="100"></td>
+                        <td><?= htmlspecialchars($product['nombre']) ?></td>
+                        <td><?= number_format($product['precio'], 2) ?> €</td>
+                        <td><?= htmlspecialchars($product['descripcion']) ?></td>
                         <td>
-                            <?php if ($row['email'] !== $_SESSION['usuario']['email']) { ?>
-                                <a href="../admin/editar_usuario.php?id=<?= $row['id'] ?>" class="btn-edit">
-                                    <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
-                                </a>
-                                <a href="../admin/eliminar_usuario.php?id=<?= $row['id'] ?>" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
-                                    Eliminar
-                                </a>
-                            <?php } else { ?>
-                                <span class="btn-disabled">No puedes editarte</span>
-                            <?php } ?>
+                            <a href="../admin/editar_usuario.php?id=<?= $row['id'] ?>" class="btn-edit">
+                                <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
+                            </a>
+                            <a href="../admin/eliminar_usuario.php?id=<?= $row['id'] ?>" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
+                                Eliminar
+                            </a>
                         </td>
                     </tr>
-                <?php } ?>
+                <?php endwhile; ?>
             </tbody>
         </table>
 
@@ -106,7 +108,6 @@ $result = $conexion->query($sql);
                 <a href="?pagina=<?= $pagina_actual + 1 ?>" class="page-link">»</a>
             <?php endif; ?>
         </div>
-
     </section>
 
 </body>

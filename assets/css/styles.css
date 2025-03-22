@@ -508,3 +508,232 @@ tr:nth-child(even) {
 .pagination .page-link:last-child {
     font-size: 18px;
 }
+                /* ==== USUARIOS ==== */
+/* Contenedor del formulario de edición */
+.edit-user-container, .products-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Encabezado */
+.edit-user-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #002b46;
+}
+
+/* Tabla de edición */
+.edit-user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.edit-user-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Centrar el botón */
+.edit-user-table .center {
+    text-align: center;
+}
+
+/* Inputs y select */
+.edit-user-table input,
+.edit-user-table select {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botón de Guardar */
+.btn-save {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+                /* ==== PRODUCTOS ====*/
+/* Contenedor de productos */
+.products-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Tabla de productos */
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.products-table th, .products-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.products-table th {
+    background-color: #002b46;
+    color: white;
+}
+
+/* Imagen de productos */
+.products-table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Botones de acción */
+.products-table .btn-edit,
+.products-table .btn-delete {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.products-table .btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.products-table .btn-delete {
+    background-color: #FF5733;
+}
+
+.products-table .btn-delete:hover {
+    background-color: #C13F20;
+}
+
+/* Botón de Agregar Producto */
+.btn-save {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla de productos */
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.products-table th, .products-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.products-table th {
+    background-color: #002b46;
+    color: white;
+}
+
+/* Imagen de productos */
+.products-table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Botones de acción */
+.products-table .btn-edit,
+.products-table .btn-delete {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.products-table .btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.products-table .btn-delete {
+    background-color: #FF5733;
+}
+
+.products-table .btn-delete:hover {
+    background-color: #C13F20;
+}
+
+/* Botón de Agregar Producto */
+.btn-save {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+/* Paginación */
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #007BFF;
+    margin: 0 5px;
+}
+
+.pagination a.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+    color: white;
+}
