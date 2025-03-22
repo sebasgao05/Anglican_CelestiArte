@@ -569,7 +569,7 @@ tr:nth-child(even) {
     cursor: pointer;
     transition: 0.3s;
     margin-top: 15px;
-    width: 100%;
+    width: 30%;
 }
 
 .btn-save:hover {

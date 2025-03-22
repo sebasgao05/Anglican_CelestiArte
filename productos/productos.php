@@ -42,9 +42,9 @@ $total_paginas = ceil($total_productos / $productos_por_pagina);
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de nosotros</a></li>
-                <li><a href="account.php">Mi Cuenta</a></li>
+                <li><a href="../public/index.html">Inicio</a></li>
+                <li><a href="../public/index.htmlabout.html">Acerca de nosotros</a></li>
+                <li><a href="../public/index.htmlaccount.php">Mi Cuenta</a></li>
                 <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] === 'Administrador') { ?>
                     <li><a href="../admin/usuarios.php">Gestionar Usuarios</a></li>
                 <?php } ?>
@@ -77,13 +77,13 @@ $total_paginas = ceil($total_productos / $productos_por_pagina);
                     <tr>
                         <td><img src="<?= htmlspecialchars($product['imagen']) ?>" alt="Imagen del producto" width="100" height="100"></td>
                         <td><?= htmlspecialchars($product['nombre']) ?></td>
-                        <td><?= number_format($product['precio'], 2) ?> €</td>
+                        <td><?= number_format($product['precio'], 2) ?> $</td>
                         <td><?= htmlspecialchars($product['descripcion']) ?></td>
                         <td>
-                            <a href="../admin/editar_usuario.php?id=<?= $row['id'] ?>" class="btn-edit">
+                            <a href="editar_producto.php?id=<?= $product['id'] ?>" class="btn-edit">
                                 <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
                             </a>
-                            <a href="../admin/eliminar_usuario.php?id=<?= $row['id'] ?>" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
+                            <a href="eliminar_producto.php?id=<?= $product['id'] ?>" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
                                 Eliminar
                             </a>
                         </td>

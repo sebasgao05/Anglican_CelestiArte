@@ -41,9 +41,9 @@ $result = $conexion->query($sql);
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de nosotros</a></li>
-                <li><a href="account.php">Mi Cuenta</a></li>
+                <li><a href="../public/index.html">Inicio</a></li>
+                <li><a href="../public/index.htmlabout.html">Acerca de nosotros</a></li>
+                <li><a href="../public/index.htmlaccount.php">Mi Cuenta</a></li>
                 <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] === 'Administrador') { ?>
                     <li><a href="../admin/usuarios.php">Gestionar Usuarios</a></li>
                 <?php } ?>
