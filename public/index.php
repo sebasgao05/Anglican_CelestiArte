@@ -27,11 +27,7 @@ $result = $conexion->query($sql);
             <ul>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="about.html">Acerca de nosotros</a></li>
-                <?php if (isset($_SESSION['usuario'])): ?>
-                    <li><a href="account.php">Mi Cuenta</a></li>
-                <?php else: ?>
-                    <li><a href="login.php">Iniciar Sesión</a></li>
-                <?php endif; ?>
+                <li><a href="account.php">Mi Cuenta</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +46,7 @@ $result = $conexion->query($sql);
 
             <?php while ($product = $result->fetch_assoc()): ?>
                 <div class="product-list">
-                    <div s">
+                    <div>
                         <img class="prodcut-image" src="<?= htmlspecialchars($product['imagen']) ?>" alt="Imagen del <?= htmlspecialchars($product['nombre']) ?>">
                         <h4><?= htmlspecialchars($product['nombre']) ?></h3>
                         <p class="price">$ <?= number_format($product['precio'], 2) ?> COP</p>

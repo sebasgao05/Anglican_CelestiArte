@@ -5,3 +5,36 @@ CREATE TABLE productos (
     descripcion TEXT NOT NULL,
     imagen VARCHAR(1020) NULL
 );
+
+
+INSERT INTO productos (nombre, precio, descripcion, imagen) VALUES
+('1928 Book of Common Prayer Church Pew Edition', 22.95, 'Una edición del Libro de Oración Común de 1928 para uso en iglesias', 'https://example.com/imagen1.jpg'),
+('1928 Book of Common Prayer Large Print Edition', 29.95, 'Edición en letra grande del Libro de Oración Común de 1928', 'https://example.com/imagen2.jpg'),
+('1928 Book of Common Prayer Personal Edition', 34.95, 'Edición personal del Libro de Oración Común de 1928', 'https://example.com/imagen3.jpg'),
+('Anglican Prayers for Children', 11.95, 'Libro de oraciones para niños basado en la tradición anglicana', 'https://example.com/imagen4.jpg'),
+('Oración Común (Spanish 1928 BCP)', 28.95, 'Edición en español del Libro de Oración Común de 1928', 'https://example.com/imagen5.jpg'),
+('Personal BCP “Seconds”', 20.00, 'Edición personal del Libro de Oración Común (segundos)', 'https://example.com/imagen6.jpg'),
+('Ritual Notes (11th Edition)', 45.00, 'Una colección de notas rituales de la 11ª edición', 'https://example.com/imagen7.jpg'),
+('The Life of Christ: From Bethlehem to Emmaus', 49.95, 'La vida de Cristo, desde Belén hasta Emmaus', 'https://example.com/imagen8.jpg'),
+('Personal Prayer Book', 25.00, 'Un libro personal de oraciones para devociones diarias', 'https://example.com/imagen9.jpg'),
+('The Anglican Prayer Book', 18.95, 'Un libro de oraciones para la comunidad anglicana', 'https://example.com/imagen10.jpg'),
+('English Hymnal (Complete)', 35.00, 'Himnario completo en inglés para la iglesia anglicana', 'https://example.com/imagen11.jpg'),
+('The Oxford Book of Carols', 23.50, 'Una compilación de villancicos y canciones de Navidad', 'https://example.com/imagen12.jpg'),
+('The Psalms of David', 15.00, 'Colección de los Salmos de David para la oración y meditación', 'https://example.com/imagen13.jpg'),
+('The Holy Bible (Anglican Edition)', 50.00, 'Edición anglicana de la Biblia', 'https://example.com/imagen14.jpg'),
+('The Book of Psalms in Spanish', 19.95, 'Edición en español del Libro de los Salmos', 'https://example.com/imagen15.jpg'),
+('The Gospel of Matthew (Anglican)', 12.95, 'El Evangelio de San Mateo en la versión anglicana', 'https://example.com/imagen16.jpg'),
+('The Book of Common Prayer Pocket Edition', 15.95, 'Edición de bolsillo del Libro de Oración Común', 'https://example.com/imagen17.jpg'),
+('The Anglican Prayer Calendar', 8.00, 'Calendario de oración anglicano', 'https://example.com/imagen18.jpg'),
+('The Catechism of the Anglican Church', 20.00, 'Catecismo oficial de la iglesia anglicana', 'https://example.com/imagen19.jpg'),
+('Anglican Devotional Journal', 14.95, 'Diario devocional para los fieles anglicanos', 'https://example.com/imagen20.jpg'),
+('The Gospel of Mark (Spanish)', 9.95, 'El Evangelio de San Marcos en español', 'https://example.com/imagen21.jpg'),
+('The Book of Common Prayer for Families', 27.95, 'Edición del Libro de Oración Común adaptada para familias', 'https://example.com/imagen22.jpg'),
+('Benedictions and Prayers for Every Day', 10.00, 'Oraciones y bendiciones diarias', 'https://example.com/imagen23.jpg'),
+('The History of the Anglican Church', 30.00, 'Historia completa de la iglesia anglicana', 'https://example.com/imagen24.jpg'),
+('Anglican Church Music for Worship', 12.00, 'Música de la iglesia anglicana para la adoración', 'https://example.com/imagen25.jpg'),
+('Saints of the Anglican Church', 17.50, 'Libro sobre los santos venerados por la iglesia anglicana', 'https://example.com/imagen26.jpg'),
+('A Guide to Anglican Worship', 22.00, 'Guía de la adoración anglicana', 'https://example.com/imagen27.jpg'),
+('The Anglican Church Yearbook', 40.00, 'Anuario de la iglesia anglicana con eventos y festividades', 'https://example.com/imagen28.jpg'),
+('Anglican Prayers for All Occasions', 21.95, 'Oraciones anglicanas para todas las ocasiones', 'https://example.com/imagen29.jpg'),
+('Anglican Hymns for Children', 16.00, 'Himnos anglicanos para niños', 'https://example.com/imagen30.jpg');
