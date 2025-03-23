@@ -57,19 +57,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../admin/style_editar.css">
 </head>
 <body>
     <header class="navbar">
         <div class="logo">
-            <a href="index.html"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
-            <a href="index.html"><h1>Anglican CelestiArte</h1></a>
+            <a href="index.php"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
+            <a href="index.php"><h1>Anglican CelestiArte</h1></a>
         </div>
         <nav>
             <ul>
-                <li><a href="../public/index.html">Inicio</a></li>
-                <li><a href="../public/index.htmlabout.html">Acerca de nosotros</a></li>
-                <li><a href="../public/index.htmlaccount.php">Mi Cuenta</a></li>
+                <li><a href="../public/index.php">Inicio</a></li>
+                <li><a href="../public/hpabout.html">Acerca de nosotros</a></li>
+                <li><a href="../public/account.php">Mi Cuenta</a></li>
                 <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] === 'Administrador') { ?>
                     <li><a href="../admin/usuarios.php">Gestionar Usuarios</a></li>
                 <?php } ?>

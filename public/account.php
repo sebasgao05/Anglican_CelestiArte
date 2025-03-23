@@ -15,12 +15,12 @@ session_start();
 
 <header class="navbar">
     <div class="logo">
-        <a href="index.html"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
-        <a href="index.html"><h1>Anglican CelestiArte</h1></a>
+        <a href="index.php"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
+        <a href="index.php"><h1>Anglican CelestiArte</h1></a>
     </div>
     <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li><a href="about.html">Acerca de nosotros</a></li>
             <li><a href="account.php">Mi Cuenta</a></li>
             <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] === 'Administrador') { ?>

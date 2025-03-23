@@ -1,6 +1,6 @@
 <?php
-session_start();
-include '../config/conexion.php';
+//session_start();
+include '../config/test_conexion.php';
 
 // Verificar si el usuario es administrador
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'Administrador') {
@@ -13,44 +13,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = $_POST['nombre'];
     $precio = $_POST['precio'];
     $descripcion = $_POST['descripcion'];
+    $imagen = $_POST['imagen']; // URL de la imagen
 
-    // Validar imagen
-    if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
-        $imagen_nombre = $_FILES['imagen']['name'];
-        $imagen_tmp = $_FILES['imagen']['tmp_name'];
-        $imagen_tipo = $_FILES['imagen']['type'];
-        
-        // Directorio donde se guardarán las imágenes
-        $directorio_imagenes = '../assets/img/';
+    // Insertar los datos del producto en la base de datos
+    $sql = "INSERT INTO productos (nombre, precio, descripcion, imagen) VALUES (?, ?, ?, ?)";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param("sdss", $nombre, $precio, $descripcion, $imagen);
 
-        // Extensiones permitidas
-        $extensiones_permitidas = ['image/jpeg', 'image/png', 'image/jpg'];
-        
-        // Verificar si la extensión de la imagen es permitida
-        if (in_array($imagen_tipo, $extensiones_permitidas)) {
-            $imagen_destino = $directorio_imagenes . basename($imagen_nombre);
-            
-            // Mover la imagen del directorio temporal al directorio final
-            if (move_uploaded_file($imagen_tmp, $imagen_destino)) {
-                // Guardar en la base de datos
-                $sql = "INSERT INTO productos (nombre, precio, descripcion, imagen) VALUES (?, ?, ?, ?)";
-                $stmt = $conexion->prepare($sql);
-                $stmt->bind_param("sdss", $nombre, $precio, $descripcion, $imagen_destino);
-
-                if ($stmt->execute()) {
-                    header("Location: productos.php"); // Redirigir a la lista de productos
-                    exit;
-                } else {
-                    echo "Error al agregar el producto.";
-                }
-            } else {
-                echo "Error al subir la imagen.";
-            }
-        } else {
-            echo "El tipo de imagen no es permitido.";
-        }
+    if ($stmt->execute()) {
+        header("Location: productos.php"); // Redirigir a la lista de productos
+        exit;
     } else {
-        echo "No se ha seleccionado ninguna imagen.";
+        echo "Error al agregar el producto.";
     }
 }
 ?>
@@ -82,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <section class="edit-user-container">
     <h2>Agregar Nuevo Producto</h2>
 
-    <form action="agregar_producto.php" method="POST" enctype="multipart/form-data">
+    <form action="agregar_producto.php" method="POST">
         <table class="edit-user-table">
             <tr>
                 <td><label for="nombre">Nombre del Producto:</label></td>
@@ -97,8 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td><textarea id="descripcion" name="descripcion" required></textarea></td>
             </tr>
             <tr>
-                <td><label for="imagen">Imagen del Producto:</label></td>
-                <td><input type="file" id="imagen" name="imagen" accept="image/jpeg, image/png, image/jpg" required></td>
+                <td><label for="imagen">URL de la Imagen del Producto:</label></td>
+                <td><input type="text" id="imagen" name="imagen" placeholder="Ingrese la URL de la imagen" required></td>
             </tr>
             <tr>
                 <td colspan="2" class="center">

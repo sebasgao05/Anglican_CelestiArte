@@ -3,5 +3,5 @@ CREATE TABLE productos (
     nombre VARCHAR(100) NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
     descripcion TEXT NOT NULL,
-    imagen VARCHAR(255) NULL
+    imagen VARCHAR(1020) NULL
 );
