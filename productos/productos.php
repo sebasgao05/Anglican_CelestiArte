@@ -82,7 +82,7 @@ $total_paginas = ceil($total_productos / $productos_por_pagina);
                             <a href="editar_producto.php?id=<?= $product['id'] ?>" class="btn-edit">
                                 <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
                             </a>
-                            <a href="eliminar_producto.php?id=<?= $product['id'] ?>" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
+                            <a href="eliminar_producto.php?id=<?= $product['id'] ?>" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este PRODUCTO?')">
                                 Eliminar
                             </a>
                         </td>

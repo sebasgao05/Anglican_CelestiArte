@@ -38,20 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-<header class="navbar">
-    <div class="logo">
-        <a href="../index.php"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
-        <a href="../index.php"><h1>Anglican CelestiArte</h1></a>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="../index.php">Inicio</a></li>
-            <li><a href="../about.html">Acerca de nosotros</a></li>
-            <li><a href="account.php">Mi Cuenta</a></li>
-            <li><a href="productos.php">Productos</a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.php"><img src="../assets/img/acc-logo.png" alt="Anglican CelestiArte"></a>
+            <a href="index.php"><h1>Anglican CelestiArte</h1></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../public/index.php">Inicio</a></li>
+                <li><a href="../public/about.html">Acerca de nosotros</a></li>
+                <li><a href="../public/account.php">Mi Cuenta</a></li>
+                <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] === 'Administrador') { ?>
+                    <li><a href="../admin/usuarios.php">Gestionar Usuarios</a></li>
+                <?php } ?>
+                <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 'Administrador') : ?>
+                    <li><a href="../productos/productos.php">Productos</a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </header>
 
 <section class="edit-user-container">
     <h2>Agregar Nuevo Producto</h2>
